@@ -1,0 +1,11 @@
+
+.arc text {
+    fill:black;
+  }
+  
+  .edge {
+    fill: none;
+    stroke: black;
+    stroke-width: 1px;
+  } 
+  
