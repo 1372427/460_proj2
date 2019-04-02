@@ -24,8 +24,9 @@ let dataset = {
     let w = 500, h = 500;
   
     let svg = d3.select("#svg")
-                .attr('width', w)
-                .attr('height', h);
+      .append('svg')
+      .attr('width', w)
+      .attr('height', h);
   
     let treelayout = d3.cluster().size([w - 40,h - 40]);
   
@@ -42,7 +43,8 @@ let dataset = {
        .attr('x1', d => d.source.x + 20)
        .attr('y1', d => d.source.y + 20)
        .attr('x2', d => d.target.x + 20)
-       .attr('y2', d => d.target.y + 20);
+       .attr('y2', d => d.target.y + 20)
+       .attr('stroke', 'black');
   
     svg.selectAll('circle')
        .data(root.descendants())

@@ -37,6 +37,7 @@ function rand(min, max) {
   function createVisualization(dataset) {
     let w = 500, h = 600;
     let svg = d3.select("#svg")
+                .append('svg')
                 .attr('width', w)
                 .attr('height', h);
   

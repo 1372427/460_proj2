@@ -2,10 +2,10 @@
   function makeGraph() {
     // dataset for this stacked bar chart
     let dataset = [
-        {company: "Apple", sales: 124.00 }, 
-        {company: "Google", sales: 124.00 }, 
+        {company: "Apple", sales: 12.00 }, 
+        {company: "Google", sales: 14.00 }, 
         {company: "Microsoft", sales: 124.00 }, 
-        {company: "Skype", sales: 124.00 },  ]; 
+        {company: "Skype", sales: 224.00 },  ]; 
   
     // settings for our pie chart 
     let w = 500;
@@ -25,22 +25,22 @@
       .range([h - 40, 20]);
   
       /////TODO
-    let extent = d3.extent(dataset, d => d.company);
   
-    let xScale = d3.scaleTime()
-      .domain([extent[0], endDate])
+    let xScale = d3.scaleBand()
+      .domain(d3.range(dataset.length))
       .range([60, w - 20]);
   
     let barlen = (w - 40) / dataset.length - 20;
   
     svg.selectAll('rect')
-      .data(d => d)
+      .data(dataset)
       .enter()
       .append('rect')
-        .attr('x', d => xScale(d.company))
-        .attr('y', d => w- yScale(d.sales))
+        .attr('x', (d,i) => xScale(i))
+        .attr('y', d =>  yScale(d.sales))
         .attr('width', barlen)
-        .attr('height', d => yScale(d.sales) )
+        .attr('height', d => h-40-yScale(d.sales) )
+        .attr('fill', 'blue')
   
     // AXES
   
@@ -48,8 +48,8 @@
     // .tickFormat()
     let xAxis = d3
       .axisBottom(xScale)
-      .ticks(dataset.length + 1)
-      .tickFormat(d3.timeFormat("%b")) ;
+      .ticks(dataset.length + 1);
+
     let xAxisGroup = svg
       .append("g")
       .attr("transform", `translate(0, ${h - 40})`)

@@ -18,6 +18,7 @@ function createLineChart2() {
   // create our SVG element
   let svg = d3
     .select("#svg")
+    .append("svg")
     .attr("width", w)
     .attr("height", h);
 
@@ -59,15 +60,16 @@ function createLineChart2() {
   let line = d3.line()
                .defined(d => d.sleep > 0)
                .x(d => xScale(d.date))
-               .y(d => yScale(d.sleep))
-               .style('stroke', 'red')
-               .style('stroke-width', '2px');
+               .y(d => yScale(d.sleep));
 
   // draw the line using a path
   svg.append('path')
      .datum(dataset)
      .attr('class', 'line')
-     .attr('d', line);
+     .attr('d', line)
+     .style('stroke', 'red')
+     .style('stroke-width', '2px')
+     .style('fill', 'none');
 
 
 }

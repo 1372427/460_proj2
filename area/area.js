@@ -11,10 +11,10 @@ let dataset = [
 ]
 
 function createAreaChart() {
-    console.log('hi')
     // create our SVG element
     let svg = d3
       .select("#svg")
+      .append("svg")
       .attr("width", w)
       .attr("height", h);
   
@@ -27,18 +27,19 @@ function createAreaChart() {
     // create a scale for x-axis: use d3.extent directly to get the min and max 
     // values as an array, which works great as the argument for domain. 
     let xScale = d3
-      .scaleTime()
-      .domain(d3.extent(dataset, d => d.date))
+      .scaleBand()
+      .domain(d3.range(dataset.length))
       .range([30, w - 20]);
   
+
     let barlen = (w - 40) / dataset.length - 4;
   
     // create our x-axis and customize look with .ticks() and
     // .tickFormat()
     let xAxis = d3
       .axisBottom(xScale)
-      .ticks(dataset.length + 1)
-      .tickFormat(d3.timeFormat("%a"));
+      .ticks(dataset.length + 1);
+
     let xAxisGroup = svg
       .append("g")
       .attr("transform", `translate(0, ${h - 20})`)
@@ -49,19 +50,18 @@ function createAreaChart() {
       .append("g")
       .attr("transform", `translate(30, 0)`)
       .call(yAxis);
-  
+      
     /* LINE CHART CODE */
     // build a D3 line generator 
     let area = d3.area()
-                 .x(d => xScale(d.date))
+                 .x((d,i) => xScale(i))
                  .y0(d => yScale(d.sleep))
-                 .y1(yScale.range()[0])
-                 .style('stroke', 'red')
-                 .style('fill', 'red');
+                 .y1(yScale.range()[0]);
   
     // draw the line using a path
     svg.append('path')
        .datum(dataset)
+       .attr("fill", "red")
        .attr('class', 'area')
        .attr('d', area);
   
