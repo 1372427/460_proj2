@@ -15,20 +15,68 @@
 
 /* UTILITY FUNCTIONS */
 
-function rand(min, max) {
-    return Math.round(min + Math.random() * (max - min));
-  }
-  
-  function genRandomTree(depth, depthMax, valueRange) {
-    if(depth == depthMax - 1) {
-      return { "name": 'child', 
-               'value': rand(valueRange[0], valueRange[1])};
-    } else {
-      let numChildren = rand(3,5);
-  
-      return { 'name': 'parent', 
-               'children': Array.from({length:numChildren}, () => genRandomTree(depth + 1, depthMax, valueRange)) }
-    }
+
+
+  let dataset = {
+    name: "RIT",
+    children: [
+      {
+        name: "GCCIS",
+        children: [
+          {
+            name: "IGME",
+            value: 547
+          },
+          {
+            name: "Security",
+            value: 235
+          },
+          {
+            name: "HCI",
+            value: 743
+          }
+        ]
+      },
+      {
+        name: "NTID",
+        children: [
+          
+          {
+            name: "Architecture",
+            value: 21
+          },
+          
+          {
+            name: "Interpretation",
+            value: 125
+          },
+          
+          {
+            name: "Art",
+            value: 25
+          }
+        ]
+      },
+      {
+        name: "COLA",
+        children: [
+          
+          {
+            name: "Linguistics",
+            value: 432
+          },
+          
+          {
+            name: "Social Behaviour",
+            value: 235
+          },
+          {
+            name: "Psychology",
+            value: 124
+          }
+        ]
+      }
+    ]
   }
   
   
@@ -84,6 +132,6 @@ function rand(min, max) {
   
   
   window.onload = function() {
-    createVisualization(genRandomTree(0, 3, [100, 1000]));
+    createVisualization(dataset);
   };
   

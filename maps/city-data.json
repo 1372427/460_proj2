@@ -1,0 +1,29 @@
+
+{ "cities": [
+  {
+    "name": "Rochester",
+    "lat": 43.1861601,
+    "lon": -77.6864389
+  },
+  {
+    "name": "San Francisco",
+    "lat": 37.7576793,
+    "lon": -122.5076401
+  },
+  {
+    "name": "San Carlos",
+    "lat": 37.506825,
+    "lon": -122.259732
+  },
+  {
+    "name": "Terre Haute",
+    "lat": 39.466620,
+    "lon": -87.412802
+  },
+  {
+    "name": "Miami",
+    "lat": 25.763496,
+    "lon": -80.197198
+  }
+]
+}

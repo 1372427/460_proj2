@@ -1,13 +1,37 @@
 
-let dataset = []
-
-for(let i = 0; i < 60; i++) {
-  let datum = {
-    sleep: (Math.random() < 0.02) ? -1 : Math.random() * 3 + 9,
-    date: new Date(2014, i)
-  };
-  dataset.push(datum);
-}
+let dataset = [
+  {
+    sleep: 5,
+    date: new Date(2017, 01)
+  },{
+    sleep: 6,
+    date: new Date(2017, 02)
+  },{
+    sleep: 4,
+    date: new Date(2017, 03)
+  },{
+    sleep: 6,
+    date: new Date(2017, 04)
+  },{
+    sleep: 7,
+    date: new Date(2017, 05)
+  },{
+    sleep: 7,
+    date: new Date(2017, 06)
+  },{
+    sleep: 5,
+    date: new Date(2017, 07)
+  },{
+    sleep: 4,
+    date: new Date(2017, 08)
+  },{
+    sleep: 5,
+    date: new Date(2017, 09)
+  },{
+    sleep: 6,
+    date: new Date(2017, 10)
+  },
+]
 
 let w = 500;
 let h = 500;
@@ -26,7 +50,7 @@ function createLineChart2() {
   let yScale = d3
     .scaleLinear()
     .domain([0, 12])
-    .range([h - 20, 20]);
+    .range([h - 50, 20]);
 
   // create a scale for x-axis: use time for the date data variable
   // set the end to be the day after the last date, which is hard
@@ -35,7 +59,7 @@ function createLineChart2() {
   let xScale = d3
     .scaleTime()
     .domain(d3.extent(dataset, d => d.date))
-    .range([30, w - 20]);
+    .range([50, w - 20]);
 
   let barlen = (w - 40) / dataset.length - 4;
 
@@ -46,13 +70,13 @@ function createLineChart2() {
     .tickFormat(d3.timeFormat("%m/%y"));
   let xAxisGroup = svg
     .append("g")
-    .attr("transform", `translate(0, ${h - 20})`)
+    .attr("transform", `translate(0, ${h - 50})`)
     .call(xAxis);
 
   let yAxis = d3.axisLeft(yScale);
   let yAxisGroup = svg
     .append("g")
-    .attr("transform", `translate(30, 0)`)
+    .attr("transform", `translate(50, 0)`)
     .call(yAxis);
 
   /* LINE CHART CODE */
@@ -71,6 +95,20 @@ function createLineChart2() {
      .style('stroke-width', '2px')
      .style('fill', 'none');
 
+     svg.append('text')
+     .classed('axis-label', true)
+     .attr('transform', 'rotate(-90)')
+     .attr('x', -h/2)
+     .attr('y', 20)
+     .attr('text-anchor', 'middle')
+     .text('States Visited')
+     
+   svg.append('text')
+     .classed('axis-label', true)
+     .attr('x', w/2)
+     .attr('y', h - 5)
+     .attr('text-anchor', 'middle')
+     .text('Month')
 
 }
 
