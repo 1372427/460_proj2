@@ -150,6 +150,16 @@ let stateValues = {
   
     svg.select(".legendOrdinal")
       .call(legendOrdinal);
+
+      
+
+     svg.append('text')
+     .classed('title', true)
+     .attr('x', w/2)
+     .attr('y', 20)
+     .attr('text-anchor', 'middle')
+     .text('Percent of People Believing in Aliens')
+
   }
   
   
@@ -169,7 +179,6 @@ let stateValues = {
     });
   
     let stateValues2 = new Map(states.map(d => [d.state, d.value]));
-    console.log(stateValues2);
     createVisualization(json, stateValues2);
   });
   

@@ -49,7 +49,7 @@ function makeGraph() {
     let yScale = d3
         .scaleLinear()
         .domain([0, 1000])
-        .range([h - 50, 20]);
+        .range([h - 50, 30]);
 
     let candles = svg.selectAll('.candle')
         .data(dataset)
@@ -102,6 +102,15 @@ function makeGraph() {
         .attr('y', h - 5)
         .attr('text-anchor', 'middle')
         .text('Date (2018)')
+        
+
+     svg.append('text')
+     .classed('title', true)
+     .attr('x', w/2)
+     .attr('y', 20)
+     .attr('text-anchor', 'middle')
+     .text('Company A Stock')
+
 }
 
 window.onload = () => {

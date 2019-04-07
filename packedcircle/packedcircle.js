@@ -3,22 +3,39 @@
  */
 
 let dataset = {
-    "name": "Root/Parent (has no parents)",
+    "name": "RIT",
     "children": [
-      { "name": "Child/Parent", 
+      { "name": "GCCIS", 
         "children": [ 
-          { "name": "Child/Leaf",
-            "value": 200,
+          { "name": "GDD",
+            "value": 100,
           },
-          { "name": "Child/Leaf",
+          { "name": "NMID",
+            "value": 150,
+          },
+          { "name": "IST",
             "value": 200,
           }
       
-      ]},
-      { "name": "Child/Leaf",
+      ]},    { "name": "COLA", 
+      "children": [ 
+        { "name": "Language",
+          "value": 100,
+        },
+        { "name": "Psychology",
+          "value": 150,
+        },
+        { "name": "Linguistics",
+          "value": 200,
+        }
+    
+    ]},
+      { "name": "COIS",
         "value": 300 }
     ]
   };
+
+  let colors = ["blue", "yellow", "orange"]
   
   function makeGraph() {
   
@@ -32,7 +49,7 @@ let dataset = {
                 .attr('width', w)
                 .attr('height', h);
   
-    let packLayout = d3.pack().size([w - 40,h - 40]);
+    let packLayout = d3.pack().size([w - 60,h - 60]);
     root.sum((d) => d.value)
 
 
@@ -44,7 +61,9 @@ let dataset = {
     // analyzed data. We are going to use the list of links() to draw our lines, 
     // and the list of all descendants() to draw each item.
   
-    svg.selectAll('circle')
+    svg.append('g')
+    .attr("transform", "translate(30, 30)")
+    .selectAll('circle')
        .data(root.descendants())
        .enter()
        .append('circle')
@@ -52,19 +71,27 @@ let dataset = {
        .attr('cx', d => d.x)
        .attr('cy', d => d.y)
        .attr('r', d => d.r)
-       .attr('fill', 'red')
+       .attr('fill', (d,i)=> d.depth>0? d.depth==1?colors[i]: 'white':'red')
        .attr('opacity', 0.3);
   
-    svg.selectAll('text')
+    svg.select('g').selectAll('text')
        .data(root.descendants())
        .enter()
        .append('text')
        .classed('node-label', true)
        .classed('', true)
-       .attr('x', d => d.x )
+       .attr('x', d => d.x - d.r +10 )
        .attr('y', d => d.y )
        .text(d => d.children===undefined? d.data.name: "");
+       
   
+
+       svg.append('text')
+       .classed('title', true)
+       .attr('x', w/2)
+       .attr('y', 20)
+       .attr('text-anchor', 'middle')
+       .text('RIT Majors')
   }
   
   

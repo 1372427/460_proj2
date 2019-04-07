@@ -1,35 +1,66 @@
 
 let dataset = [
   {
-    sleep: 5,
+    cities: 5,
     date: new Date(2017, 01)
   },{
-    sleep: 6,
+    cities: 6,
     date: new Date(2017, 02)
   },{
-    sleep: 4,
+    cities: 4,
     date: new Date(2017, 03)
   },{
-    sleep: 6,
+    cities: 6,
     date: new Date(2017, 04)
   },{
-    sleep: 7,
+    cities: 7,
     date: new Date(2017, 05)
   },{
-    sleep: 7,
+    cities: 7,
     date: new Date(2017, 06)
   },{
-    sleep: 5,
+    cities: 5,
     date: new Date(2017, 07)
   },{
-    sleep: 4,
+    cities: 4,
     date: new Date(2017, 08)
   },{
-    sleep: 5,
+    cities: 5,
     date: new Date(2017, 09)
   },{
-    sleep: 6,
+    cities: 6,
     date: new Date(2017, 10)
+  },
+  {
+    cities: 2,
+    date: new Date(2017, 11)
+  },{
+    cities: 1,
+    date: new Date(2017, 12)
+  },{
+    cities: 3,
+    date: new Date(2018, 1)
+  },{
+    cities: 6,
+    date: new Date(2018, 2)
+  },{
+    cities: 3,
+    date: new Date(2018, 3)
+  },{
+    cities: 4,
+    date: new Date(2018, 4)
+  },{
+    cities: 5,
+    date: new Date(2018, 5)
+  },{
+    cities: 4,
+    date: new Date(2018, 6)
+  },{
+    cities: 2,
+    date: new Date(2018, 7)
+  },{
+    cities: 2,
+    date: new Date(2018, 8)
   },
 ]
 
@@ -46,10 +77,10 @@ function createLineChart2() {
     .attr("width", w)
     .attr("height", h);
 
-  // create a scale for y-axis: use linear for the sleep data variable
+  // create a scale for y-axis: use linear for the cities data variable
   let yScale = d3
     .scaleLinear()
-    .domain([0, 12])
+    .domain([0, 8])
     .range([h - 50, 20]);
 
   // create a scale for x-axis: use time for the date data variable
@@ -82,9 +113,9 @@ function createLineChart2() {
   /* LINE CHART CODE */
   // build a D3 line generator 
   let line = d3.line()
-               .defined(d => d.sleep > 0)
+               .defined(d => d.cities > 0)
                .x(d => xScale(d.date))
-               .y(d => yScale(d.sleep));
+               .y(d => yScale(d.cities));
 
   // draw the line using a path
   svg.append('path')
@@ -101,7 +132,7 @@ function createLineChart2() {
      .attr('x', -h/2)
      .attr('y', 20)
      .attr('text-anchor', 'middle')
-     .text('States Visited')
+     .text('Cities Visited')
      
    svg.append('text')
      .classed('axis-label', true)
@@ -109,6 +140,13 @@ function createLineChart2() {
      .attr('y', h - 5)
      .attr('text-anchor', 'middle')
      .text('Month')
+
+     svg.append('text')
+       .classed('title', true)
+       .attr('x', w/2)
+       .attr('y', 20)
+       .attr('text-anchor', 'middle')
+       .text('Cities Visited Per Month')
 
 }
 

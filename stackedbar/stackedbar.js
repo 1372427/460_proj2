@@ -27,7 +27,7 @@
     let yScale = d3
       .scaleLinear()
       .domain([0, d3.max(dataset, d => d.food + d.transportation + d.utilities)])
-      .range([h - 40, 20]);
+      .range([h - 50, 40]);
   
     let extent = d3.extent(dataset, d => d.date);
     let endDate = new Date(extent[1].getFullYear(), extent[1].getMonth() + 1);
@@ -70,7 +70,7 @@
       .tickFormat(d3.timeFormat("%b")) ;
     let xAxisGroup = svg
       .append("g")
-      .attr("transform", `translate(0, ${h - 40})`)
+      .attr("transform", `translate(0, ${h - 50})`)
       .call(xAxis);
   
     let yAxis = d3.axisLeft(yScale);
@@ -114,6 +114,12 @@
       .attr('text-anchor', 'middle')
       .text('2018')
             
+    svg.append('text')
+    .classed('title', true)
+    .attr('x', w/2)
+    .attr('y', 20)
+    .attr('text-anchor', 'middle')
+    .text('Spend Path')
   }
   
   

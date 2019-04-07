@@ -83,7 +83,7 @@ function makeGraph() {
                  .enter()
                  .append('circle')
                    .attr('r', 20)
-                   .style('fill', (d,i) => (i < 2) ? 'green' : 'aliceblue')
+                   .style('fill', (d,i) => (i < 2) ? 'navy' : 'violet')
                    .call(d3.drag()
                            .on('start', onDragStart)
                            .on('drag', onDrag)
@@ -117,7 +117,7 @@ function makeGraph() {
     // LEGEND - built using Susie Lu's d3.svg.legend package
     let legendScale = d3.scaleOrdinal()
                         .domain(['First World', 'Developing'])
-                        .range(['green', 'aliceblue']);
+                        .range(['navy', 'violet']);
   
     svg.append("g")
       .attr("class", "legendOrdinal")
@@ -131,6 +131,14 @@ function makeGraph() {
   
     svg.select(".legendOrdinal")
       .call(legendOrdinal);
+
+     svg.append('text')
+     .classed('title', true)
+     .attr('x', 300)
+     .attr('y', 40)
+     .attr('text-anchor', 'middle')
+     .text('Countries Sharing Borders')
+
   
 }
 

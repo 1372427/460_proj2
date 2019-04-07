@@ -2,10 +2,14 @@
   function makeGraph() {
     // dataset for this stacked bar chart
     let dataset = [
-        {company: "Apple", sales: 12.00 }, 
-        {company: "Google", sales: 14.00 }, 
+        {company: "Apple", sales: 132.00 }, 
+        {company: "Google", sales: 423.00 }, 
         {company: "Microsoft", sales: 124.00 }, 
-        {company: "Skype", sales: 224.00 },  ]; 
+        {company: "Skype", sales: 224.00 },  
+        {company: "Amazon", sales: 367.00 }, 
+        {company: "Facebook", sales: 324.00 }, 
+        {company: "Slack", sales: 632.00 }, 
+        {company: "Twitter", sales: 345.00 }, ]; 
   
     // settings for our pie chart 
     let w = 500;
@@ -24,11 +28,9 @@
       .domain([0, d3.max(dataset, d => d.sales)])
       .range([h - 40, 20]);
   
-      /////TODO
-  
     let xScale = d3.scaleBand()
-      .domain(d3.range(dataset.length))
-      .range([60, w - 20]);
+    .domain(["Apple","Google", "Microsoft", "Skype", "Amazon", "Facebook", "Slack", "Twitter"])
+    .range([60, w-20])
   
     let barlen = (w - 40) / dataset.length - 20;
   
@@ -36,16 +38,13 @@
       .data(dataset)
       .enter()
       .append('rect')
-        .attr('x', (d,i) => xScale(i))
+        .attr('x', (d,i) => xScale(d.company))
         .attr('y', d =>  yScale(d.sales))
         .attr('width', barlen)
         .attr('height', d => h-40-yScale(d.sales) )
         .attr('fill', 'blue')
   
     // AXES
-  
-    // create our x-axis and customize look with .ticks() and
-    // .tickFormat()
     let xAxis = d3
       .axisBottom(xScale)
       .ticks(dataset.length + 1);
@@ -69,7 +68,7 @@
       .attr('x', -h/2)
       .attr('y', 20)
       .attr('text-anchor', 'middle')
-      .text('Total sales ($)')
+      .text('Total sales ($k)')
       
     svg.append('text')
       .classed('axis-label', true)
@@ -78,6 +77,14 @@
       .attr('text-anchor', 'middle')
       .text('Company')
             
+
+     svg.append('text')
+     .classed('title', true)
+     .attr('x', w/2)
+     .attr('y', 20)
+     .attr('text-anchor', 'middle')
+     .text('2018 Earnings')
+
   }
   
   

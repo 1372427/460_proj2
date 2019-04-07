@@ -66,9 +66,10 @@
   
     // append center text label 
     svg.append('text')
+      .classed('title', true)
       .attr('transform', `translate(${w/2}, ${h/2})`)
       .attr('text-anchor', 'middle')
-      .text("Demography");
+      .text("RIT 2018 Demography");
 
       
     // LEGEND - built using Susie Lu's d3.svg.legend package

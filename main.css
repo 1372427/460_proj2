@@ -19,6 +19,7 @@
     background-color: cornsilk;
     margin-right: 50px;
     min-height: 400px;
+    min-width: 540px;
 }
 
 #resources{
@@ -48,4 +49,12 @@ navbar{
 }
 #resources {
     margin-top: 50px;
+}
+
+.title {
+    font-size: 1.25em;
+}
+
+svg {
+    margin: 10px;
 }
