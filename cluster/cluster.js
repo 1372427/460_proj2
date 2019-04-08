@@ -3,15 +3,23 @@
  */
 
 let dataset = {
-    "name": "Root/Parent (has no parents)",
+    "name": "A",
     "children": [
-      { "name": "Child/Parent", 
+      { "name": "B", 
         "children": [ 
-          { "name": "Child/Leaf"
-          }
+          { "name": "C"
+          }, { "name": "D", 
+          "children": [ 
+            { "name": "E"
+            }
+        
+        ]}
       
       ]},
-      { "name": "Child/Leaf" }
+      { "name": "F","children": [ 
+        { "name": "G"
+        }, { "name": "H"}]
+     }
     ]
   };
   
@@ -26,9 +34,11 @@ let dataset = {
     let svg = d3.select("#svg")
       .append('svg')
       .attr('width', w)
-      .attr('height', h);
+      .attr('height', h)
+      .append('g')
+      .attr('transform', 'translate(0,40)');
   
-    let treelayout = d3.cluster().size([w - 40,h - 40]);
+    let treelayout = d3.cluster().size([w - 40,h - 80]);
   
     // The tree layout will analyze in-place and update our hierarchy data to
     // add x and y locations
@@ -53,7 +63,8 @@ let dataset = {
        .classed('node', true)
        .attr('cx', d => d.x + 20)
        .attr('cy', d => d.y + 20)
-       .attr('r', 20);
+       .attr('r', 20)
+       .style('fill', 'green');
   
     svg.selectAll('text')
        .data(root.descendants())
@@ -64,6 +75,13 @@ let dataset = {
        .attr('x', d => d.x + 40)
        .attr('y', d => d.y + 25)
        .text(d => d.data.name);
+
+       svg.append('text')
+       .classed('title', true)
+       .attr('x', w/2)
+       .attr('y',  -20)
+       .attr('text-anchor', 'middle')
+       .text('Alphabet Soup')
   
   }
   

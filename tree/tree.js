@@ -4,21 +4,30 @@
 
 let dataset = {
     "name": "Grandpa A",
+    "gender": "M",
     "children": [
       { "name": "Aunt B", 
+      "gender": "F",
         "children": [ 
-          { "name": "Cousin B1"
+          { "name": "Cousin B1",
+          "gender": "M",
           }
       
       ]},{ "name": "Mom", 
+      
+       "gender": "F",
         "children": [ 
-          { "name": "Me"
-          },{ "name": "Brother"
-          },{ "name": "Sister"
+          { "name": "Me",
+          "gender": "F"
+          },{ "name": "Brother",
+          "gender": "M"
+          },{ "name": "Sister",
+          "gender": "F"
           }
       
       ]},
-      { "name": "Aunt C" }
+      { "name": "Aunt C",
+      "gender": "F" }
     ]
   };
   
@@ -32,9 +41,11 @@ let dataset = {
     let svg = d3.select("#svg")
                 .append('svg')
                 .attr('width', w)
-                .attr('height', h);
+                .attr('height', h)
+                .append('g')
+                .attr('transform', 'translate(0,40)');
   
-    let treelayout = d3.tree().size([w - 40,h - 40]);
+    let treelayout = d3.tree().size([w - 40,h - 80]);
   
     // The tree layout will analyze in-place and update our hierarchy data to
     // add x and y locations
@@ -64,7 +75,8 @@ let dataset = {
        .classed('node', true)
        .attr('cx', d => d.x + 20)
        .attr('cy', d => d.y + 20)
-       .attr('r', 20);
+       .attr('r', 20)
+       .style('fill', d=> d.data.gender=="M"?'turquoise':'pink');
   
     svg.selectAll('text')
        .data(root.descendants())
@@ -75,7 +87,33 @@ let dataset = {
        .attr('x', d => d.x + 40)
        .attr('y', d => d.y + 25)
        .text(d => d.data.name);
-  
+
+       
+    svg.append('text')
+    .classed('title', true)
+    .attr('x', w/2)
+    .attr('y',  -20)
+    .attr('text-anchor', 'middle')
+    .text('Family Tree')
+          
+    // LEGEND - built using Susie Lu's d3.svg.legend package
+    let legendScale = d3.scaleOrdinal()
+    .domain(['Male', 'Female'])
+    .range(['turquoise', 'pink']);
+
+    svg.append("g")
+    .attr("class", "legendOrdinal")
+    .attr("transform", "translate(400,50)");
+
+    // see https://github.com/d3/d3-shape#symbols for information about d3 symbol shapes
+    var legendOrdinal = d3.legendColor()
+    .shape("path", d3.symbol().type(d3.symbolSquare).size(60)())
+    .shapePadding(10)
+    .scale(legendScale);
+
+    svg.select(".legendOrdinal")
+    .call(legendOrdinal);
+    
   }
   
   

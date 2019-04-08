@@ -19,13 +19,13 @@ let dataset = {
       
       ]},    { "name": "COLA", 
       "children": [ 
-        { "name": "Language",
+        { "name": "Econ",
           "value": 100,
         },
-        { "name": "Psychology",
+        { "name": "Psych",
           "value": 150,
         },
-        { "name": "Linguistics",
+        { "name": "PS",
           "value": 200,
         }
     
@@ -80,7 +80,7 @@ let dataset = {
        .append('text')
        .classed('node-label', true)
        .classed('', true)
-       .attr('x', d => (d.x0 + d.x1)/2 -40 )
+       .attr('x', d => (d.x0 + d.x1)/2 -20 )
        .attr('y', d => (d.y0+d.y1)/2 )
        .text(d =>  d.data.name);
   
