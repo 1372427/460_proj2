@@ -7,7 +7,7 @@ let dataset = {
     "children": [
       { "name": "Aunt B", 
         "children": [ 
-          { "name": "Child/Leaf"
+          { "name": "Cousin B1"
           }
       
       ]},{ "name": "Mom", 
