@@ -3,22 +3,38 @@
  */
 
 let dataset = {
-    "name": "Root/Parent (has no parents)",
+    "name": "RIT",
     "children": [
-      { "name": "Child/Parent", 
+      { "name": "GCCIS", 
         "children": [ 
-          { "name": "Child/Leaf",
-            "value": 200,
+          { "name": "GDD",
+            "value": 100,
           },
-          { "name": "Child/Leaf",
+          { "name": "NMID",
+            "value": 150,
+          },
+          { "name": "IST",
             "value": 200,
           }
       
-      ]},
-      { "name": "Child/Leaf",
+      ]},    { "name": "COLA", 
+      "children": [ 
+        { "name": "Language",
+          "value": 100,
+        },
+        { "name": "Psychology",
+          "value": 150,
+        },
+        { "name": "Linguistics",
+          "value": 200,
+        }
+    
+    ]},
+      { "name": "COIS",
         "value": 300 }
     ]
   };
+
   
   function makeGraph() {
   
