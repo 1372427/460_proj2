@@ -3,15 +3,22 @@
  */
 
 let dataset = {
-    "name": "Root/Parent (has no parents)",
+    "name": "Grandpa A",
     "children": [
-      { "name": "Child/Parent", 
+      { "name": "Aunt B", 
         "children": [ 
           { "name": "Child/Leaf"
           }
       
+      ]},{ "name": "Mom", 
+        "children": [ 
+          { "name": "Me"
+          },{ "name": "Brother"
+          },{ "name": "Sister"
+          }
+      
       ]},
-      { "name": "Child/Leaf" }
+      { "name": "Aunt C" }
     ]
   };
   
