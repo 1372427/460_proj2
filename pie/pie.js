@@ -86,7 +86,7 @@ function createPieChart() {
   
     svg.append("g")
       .attr("class", "legendOrdinal")
-      .attr("transform", "translate(400,60)");
+      .attr("transform", "translate(440,100)");
   
     // see https://github.com/d3/d3-shape#symbols for information about d3 symbol shapes
     var legendOrdinal = d3.legendColor()

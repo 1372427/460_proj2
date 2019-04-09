@@ -1,6 +1,6 @@
 function makeGraph(){
     let w = 500;
-    let h = 300;
+    let h = 500;
 
     let dataset = [
        {x: 57.435896111908356, y: 46.17694227474871},
@@ -27,7 +27,6 @@ function makeGraph(){
        {x: 7.335834099036731, y: 22.611381932247788},
        {x: 39.228836413545196, y: 9.382227321299762},
        {x: 96.36386087377473, y: 20.239816484822803},
-       {x: 30.387705968286838, y: 0.2803503850794309},
        {x: 23.949425676620486, y: 10.111929667288155},
        {x: 54.16388129912066, y: 35.157332257016805},
        {x: 11.780068953547884, y: 20.190816726421403},
@@ -43,7 +42,7 @@ function makeGraph(){
     
       let yScale = d3.scaleLinear()
                   .domain([0, 100])
-                  .range([h - 50, 20]);
+                  .range([h - 50, 40]);
     
       let xScale = d3.scaleLinear()
                   .domain([0, 100])
@@ -85,6 +84,13 @@ function makeGraph(){
       .attr('y', h - 5)
       .attr('text-anchor', 'middle')
       .text('Humidity')
+      
+    svg.append('text')
+    .classed('title', true)
+    .attr('x', w/2)
+    .attr('y', 20)
+    .attr('text-anchor', 'middle')
+    .text('Bugs Counted vs. Humidity')
 }
 
 window.onload = function(){

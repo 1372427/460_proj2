@@ -22,18 +22,25 @@
             <h1>About this Graph</h1>
             <p>A tree map shows hierarchical information. Similar to a packed circle graph, 
                 the treemap shows child elements as being inside their parent elements. 
-                However, a treemap uses rectangles rather than circles and keeps a structure 
-                more similar to a tree graph, where items are organized by level. 
+                However, a treemap uses rectangles rather than circles and therefore might be more organized 
+                in terms of being able to read the groups quickly. Using padding for the treemap also allows 
+                for better labelling. While the packed circle is useful for focusing on leafs and as such may only 
+                have leafs labelled, the treemap likely has all levels labelled as in the above example. 
                 </p>
             <h2>Marks and Channels</h2>
             <h3>Marks</h3>
             <p>Marks include area.</p>
             <h3>Channels</h3>
-            <p>Channels include area, as well as spatial placement, and potentially color.</p>
-        </div>
-        <div id="resources">RESOURCES</div>
-
-    </div>
+            <p>Channels include area, as well as spatial placement, and potentially color if used to categorize elements.</p>
+        
+            <h2>Related Charts</h2>
+            <a href="../partition/">Partition Chart</a></br>
+            <a href="../packedcircle/">Packed Circle Chart</a></br>
+            <a href="../tree/">Tree Chart</a>
+            <h1 id="resources">Resources</h1>
+            <a href="https://d3indepth.com/layouts/">https://d3indepth.com/layouts/</a>
+            <p>Please see "Home" page for more resources</p>
+      </div>
 </div>
     <!-- add your HTML here -->
     <script src='./treemap.js'></script>

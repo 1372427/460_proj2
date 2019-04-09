@@ -19,10 +19,10 @@ let dataset = {
         "children": [ 
           { "name": "Me",
           "gender": "F"
-          },{ "name": "Brother",
-          "gender": "M"
           },{ "name": "Sister",
           "gender": "F"
+          },{ "name": "Brother",
+          "gender": "M"
           }
       
       ]},
@@ -43,9 +43,9 @@ let dataset = {
                 .attr('width', w)
                 .attr('height', h)
                 .append('g')
-                .attr('transform', 'translate(0,40)');
+                .attr('transform', 'translate(-40,40)');
   
-    let treelayout = d3.tree().size([w - 40,h - 80]);
+    let treelayout = d3.tree().size([w ,h - 100]);
   
     // The tree layout will analyze in-place and update our hierarchy data to
     // add x and y locations
@@ -91,7 +91,7 @@ let dataset = {
        
     svg.append('text')
     .classed('title', true)
-    .attr('x', w/2)
+    .attr('x', w/2+20)
     .attr('y',  -20)
     .attr('text-anchor', 'middle')
     .text('Family Tree')
@@ -103,7 +103,7 @@ let dataset = {
 
     svg.append("g")
     .attr("class", "legendOrdinal")
-    .attr("transform", "translate(400,50)");
+    .attr("transform", "translate(440,50)");
 
     // see https://github.com/d3/d3-shape#symbols for information about d3 symbol shapes
     var legendOrdinal = d3.legendColor()

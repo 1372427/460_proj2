@@ -27,7 +27,7 @@
     let yScale = d3
       .scaleLinear()
       .domain([0, d3.max(dataset, d => d.food + d.transportation + d.utilities)])
-      .range([h - 50, 40]);
+      .range([h - 40, 60]);
   
     let extent = d3.extent(dataset, d => d.date);
     let endDate = new Date(extent[1].getFullYear(), extent[1].getMonth() + 1);
@@ -70,7 +70,7 @@
       .tickFormat(d3.timeFormat("%b")) ;
     let xAxisGroup = svg
       .append("g")
-      .attr("transform", `translate(0, ${h - 50})`)
+      .attr("transform", `translate(0, ${h - 40})`)
       .call(xAxis);
   
     let yAxis = d3.axisLeft(yScale);
@@ -86,7 +86,7 @@
   
     svg.append("g")
       .attr("class", "legendOrdinal")
-      .attr("transform", "translate(80,20)");
+      .attr("transform", "translate(80,40)");
   
     // see https://github.com/d3/d3-shape#symbols for information about d3 symbol shapes
     var legendOrdinal = d3.legendColor()
@@ -105,14 +105,14 @@
       .attr('x', -h/2)
       .attr('y', 20)
       .attr('text-anchor', 'middle')
-      .text('Total money spent ($)')
+      .text('Total Money Spent ($)')
       
     svg.append('text')
       .classed('axis-label', true)
       .attr('x', w/2)
       .attr('y', h - 5)
       .attr('text-anchor', 'middle')
-      .text('2018')
+      .text('Month (2018)')
             
     svg.append('text')
     .classed('title', true)

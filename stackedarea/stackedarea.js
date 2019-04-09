@@ -116,7 +116,7 @@ let dataset = [
       .attr('x', -h/2)
       .attr('y', 20)
       .attr('text-anchor', 'middle')
-      .text('Total money spent ($)')
+      .text('Total Money Spent ($)')
       
     svg.append('text')
       .classed('axis-label', true)

@@ -24,8 +24,8 @@
         name: "GCCIS",
         children: [
           {
-            name: "IGME",
-            value: 547
+            name: "GDD",
+            value: 147
           },
           {
             name: "Security",
@@ -33,7 +33,7 @@
           },
           {
             name: "HCI",
-            value: 743
+            value: 243
           }
         ]
       },
@@ -43,7 +43,7 @@
           
           {
             name: "Architecture",
-            value: 21
+            value: 401
           },
           
           {
@@ -53,7 +53,7 @@
           
           {
             name: "Art",
-            value: 25
+            value: 525
           }
         ]
       },
@@ -83,25 +83,29 @@
   /* VISUALIZATION CODE */
   
   function createVisualization(dataset) {
-    let w = 500, h = 600;
+    let w = 500, h = 500;
     let svg = d3.select("#svg")
                 .append('svg')
                 .attr('width', w)
-                .attr('height', h);
+                .attr('height', h)
+                .append('g')
+                .attr('transform', 'translate(0,100)');
   
   
     // create hierarchy data and sum it up
     let root = d3.hierarchy(dataset).count();
+    root.sum(d => d.value)
   
     // create treemap layout function and call it on hierarchy data
     let layout = d3.treemap()
-                    .size([w,h])
+                    .size([w,h-100])
                     .paddingOuter(10)
                     .paddingInner(10)
                     .paddingTop(30)
                     .tile(d3.treemapSliceDice);
   
     layout(root);
+    console.log(root)
   
     // create colors scale
     let color = d3.scaleOrdinal(d3.schemePastel1);
@@ -128,6 +132,32 @@
        .attr('x', d => d.x0 + 10)
        .attr('y', d => d.y0 + 25)
        .text(d => d.data.name);
+
+    svg.append('text')
+       .classed('title', true)
+       .attr('x', w/2)
+       .attr('y',  -50)
+       .attr('text-anchor', 'middle')
+       .text('RIT Majors')
+       
+    // LEGEND - built using Susie Lu's d3.svg.legend package
+    let legendScale = d3.scaleOrdinal()
+    .domain(['University', 'College', 'Major'])
+    .range(d3.schemePastel1);
+
+    svg.append("g")
+    .attr("class", "legendOrdinal")
+    .attr("transform", "translate(400,-80)");
+
+    // see https://github.com/d3/d3-shape#symbols for information about d3 symbol shapes
+    var legendOrdinal = d3.legendColor()
+    .shape("path", d3.symbol().type(d3.symbolSquare).size(60)())
+    .shapePadding(10)
+    .scale(legendScale);
+
+    svg.select(".legendOrdinal")
+    .call(legendOrdinal);
+             
   }
   
   
