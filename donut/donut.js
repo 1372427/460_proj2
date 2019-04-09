@@ -13,9 +13,9 @@
   
     // settings for our pie chart 
     let w = 500;
-    let h = 300;
-    let innerRadius = h/2 - 50;       
-    let outerRadius = h/2;
+    let h = 500;
+    let innerRadius = 100;       
+    let outerRadius = 150;
   
     // create our SVG element
     let svg = d3
@@ -69,8 +69,13 @@
       .classed('title', true)
       .attr('transform', `translate(${w/2}, ${h/2})`)
       .attr('text-anchor', 'middle')
-      .text("RIT 2018 Demography");
+      .text("RIT 2018");
 
+      svg.append('text')
+      .classed('title', true)
+      .attr('transform', `translate(${w/2}, ${h/2+20})`)
+      .attr('text-anchor', 'middle')
+      .text("Demography");
       
     // LEGEND - built using Susie Lu's d3.svg.legend package
     let pieData = pie(dataset);
@@ -80,7 +85,7 @@
   
     svg.append("g")
       .attr("class", "legendOrdinal")
-      .attr("transform", "translate(420,20)");
+      .attr("transform", "translate(400,20)");
   
     // see https://github.com/d3/d3-shape#symbols for information about d3 symbol shapes
     var legendOrdinal = d3.legendColor()

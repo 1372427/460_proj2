@@ -5,23 +5,22 @@
     <meta charset="utf-8">
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
     <link rel="stylesheet" href="../main.css">
   </head>
 
-  <body><div id="background"></div>
+  <body>
       <div>
-          
-    <div id="flex-container"> 
         <navbar>
             <a href="../index.html">Home</a>
         </navbar>
-
+        <div id="vis" class="background">
         <div id="svg"></div>
         <div id="description">
             <h1>About this Graph</h1>
             <p>The chord graph is used to represent flow between various groups. 
                 Each individual chord has a start and ending point. The width of these 
-                points corresponds to value. This kind of graph is useful when trying 
+                points as determined by the angle of the chord corresponds to value. This kind of graph is useful when trying 
                 to show the relationship between groups. An example might be the number 
                 of people migrating between countries. A chord graph is useful as it 
                 conserves space and the width of the chords is a pretty simple channel to register.  </p>
@@ -29,15 +28,17 @@
             <h3>Marks</h3>
             <p>Marks include connection links. The chords link two items together.</p>
             <h3>Channels</h3>
-            <p>Channels include width as well as color. The length or size of the angle shows the 
+            <p>Channels include angle as well as color. The size of the angle shows the 
                 value being added or removed from the item. The color is usually used as a way of 
                 categorizing items. 
             </p>
-        </div>
-        <div id="resources">
-            <h3>Resources</h3>
-            <p>https://www.d3-graph-gallery.com/graph/chord_basic.html</p>
-        </div>
+            <h2>Related Charts</h2>
+            <a href="../forcedirected/">Force Directed Graph</a>
+            <h1 id="resources">Resources</h1>
+            
+            <a href="https://www.d3-graph-gallery.com/graph/chord_basic.html">https://www.d3-graph-gallery.com/graph/chord_basic.html</a>
+            <p>Please see "Home" page for more resources</p>
+      </div>
 
     </div>
 </div>

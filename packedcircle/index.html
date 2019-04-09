@@ -5,16 +5,17 @@
     <meta charset="utf-8">
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
     <link rel="stylesheet" href="../main.css">
   </head>
 
-  <body><div id="background"></div>
+  <body>
       <div>
-          
-    <div id="flex-container"> 
         <navbar>
             <a href="../index.html">Home</a>
         </navbar>
+          
+        <div id="vis" class="background">
 
         <div id="svg"></div>
         <div id="description">
@@ -23,16 +24,21 @@
                  Compared to other hierarchical graphs, the packed circle chart uses circles to 
                  represent the item, or node. Child nodes are linked to their parent nodes by being 
                  placed inside of them. One thing to consider with this graph is how to label items and
-                the importance of labels. </p>
+                the importance of labels. This kind of graph is helpful if the focus is the children. It 
+            is more difficult to get informaation on the parent nodes or intermediate nodes with this graph.</p>
             <h2>Marks and Channels</h2>
             <h3>Marks</h3>
-            <p>Marks include containment as well as area.</p>
+            <p>Marks include area which also acts as a containment node.</p>
             <h3>Channels</h3>
-            <p>Channels include the size of the area as well as color. </p>
-        </div>
-        <div id="resources">RESOURCES</div>
-
-    </div>
+            <p>Channels include the size of the area as well as color. The spatial placement
+                is also shown in terms of which circles are inside others.
+            </p>
+            <h2>Related Charts</h2>
+            <a href="../treemap/">Tree Map</a></br>
+            <a href="../partition/">PartitionChart</a>
+            <h1 id="resources">Resources</h1>
+            <p>Please see "Home" page for more resources</p>
+      </div>
 </div>
     <!-- add your HTML here -->
     <script src='./packedcircle.js'></script>

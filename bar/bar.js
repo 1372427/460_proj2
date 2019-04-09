@@ -42,7 +42,7 @@
         .attr('y', d =>  yScale(d.sales))
         .attr('width', barlen)
         .attr('height', d => h-40-yScale(d.sales) )
-        .attr('fill', 'blue')
+        .attr('fill', '#b55b68')
   
     // AXES
     let xAxis = d3

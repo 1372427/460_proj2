@@ -5,16 +5,17 @@
     <meta charset="utf-8">
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
     <link rel="stylesheet" href="../main.css">
   </head>
 
-  <body><div id="background"></div>
+  <body> 
       <div>
-          
-    <div id="flex-container"> 
         <navbar>
             <a href="../index.html">Home</a>
         </navbar>
+          
+        <div id="vis" class="background">
 
         <div id="svg"></div>
         <div id="description">
@@ -26,7 +27,11 @@
               Similarly, the bar graph can be used to show the amount of sleep different people got on the same
               day. In this case, the x-axis would be the person. While some trends can be seen with this graph,
               if looking for a way to show change over time, line graphs or scatter plots may be preferrable. 
-              The bar graph is best used when trying to compare values for one variable between defined groups.
+              The bar graph is best used when trying to compare values for one variable between defined groups. 
+              If further detail on the value of the bar is important, the stacked bar graph may be preferrable. 
+              For example, if the amount spent on living is being displayed and only the overall amount is important, 
+              the bar graph would be sufficient. If the information on how much is being spent towards food, housing, and 
+              other categories is also important, then a stacked bar graph could be used. 
             </p>
             <h2>Marks and Channels</h2>
             <h3>Marks</h3>
@@ -38,8 +43,12 @@
             <p>Channels include the length of the bar. Color could also be included as an additional
               channel, but in this case it is not. 
             </p>
+            <h2>Related Charts</h2>
+            <a href="../stackedbar/">Stacked Bar Chart</a></br>
+            <a href="../line/">Line Chart</a>
+            <h1 id="resources">Resources</h1>
+            <p>Please see "Home" page for more resources</p>
         </div>
-        <div id="resources">RESOURCES</div>
 
     </div>
 </div>

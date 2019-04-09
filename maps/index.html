@@ -5,16 +5,17 @@
     <meta charset="utf-8">
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
     <link rel="stylesheet" href="../main.css">
   </head>
 
-  <body><div id="background"></div>
+  <body>
       <div>
-          
-    <div id="flex-container"> 
         <navbar>
             <a href="../index.html">Home</a>
         </navbar>
+          
+        <div id="vis" class="background">
 
         <div id="svg"></div>
         <div id="description">
@@ -24,7 +25,9 @@
                 overlays, including points for case information, zooming and panning 
                 capabilities. If one needs to show complex information which benefits 
                 from geographical representation, using a map with these different 
-                layers may be a good way to prevent any information from being lost. </p>
+                layers may be a good way to prevent any information from being lost. 
+                A great example is Google Maps. Different information is shown when zooming in or out.
+              </p>
             <h2>Marks and Channels</h2>
             <h3>Marks</h3>
             <p>Marks include area or containment of the geographical information, as well as
@@ -34,9 +37,12 @@
             <p>Channels include color which is used to categorize different elements, as well as spatial 
           region, placement on a common scale, area, length, or others depending on the type of information
           being displayed for the overlays.</p>
-        </div>
-        <div id="resources">RESOURCES</div>
-
+        
+          <h2>Related Charts</h2>
+          <a href="../choropleth/">Choropleth</a>
+          <h1 id="resources">Resources</h1>
+          <a href="https://maps.google.com">Google Maps</a>
+          <p>Please see "Home" page for more resources</p>
     </div>
 </div>
     <!-- add your HTML here -->

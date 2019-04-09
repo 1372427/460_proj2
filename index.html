@@ -11,47 +11,76 @@
     <meta charset="utf-8">
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.js"></script>
-    <link rel="stylesheet" href="../main.css">
+    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+    <link rel="stylesheet" href="./main.css">
   </head>
 
-  <body><div id="background"></div>
-      <div id="first">
+  <body>
+      <div class="background">
           
     <div id="flex-container"> 
 
         <div id="container">
             
-                <a href="area/">Area Chart</a>
-                <a href="bar/">Bar Chart</a>
-                <a href="candlestick/">Candlestick Chart</a>
-                <a href="choropleth/">Choropleth Chart</a>
-                <a href="chord/">Chord Chart</a>
-                <a href="cluster/">Cluster Chart</a>
-                <a href="donut/">Donut Graph</a>
-                <a href="forcedirected/">Force Directed Graph</a>
-                <a href="line/">Line Chart</a>
-                <a href="maps/">Maps</a>
-                <a href="packedcircle/">Packed Circle Chart</a>
-                <a href="partition/">Partition Chart</a>
-                <a href="pie/">Pie Chart</a>
-                <a href="scatterplot/">Scatter Plot</a>
-                <a href="stackedarea/">Stacked Area Graph</a>
-                <a href="stackedbar/">Stacked Bar Graph</a>
-                <a href="tree/">Tree Chart</a>
-                <a href="treemap/">Tree Map</a>
+                <a href="area/"><img src="./area1.png" style="width:120px;height:120px;"/></a>
+                <a href="bar/"><img src="./bar1.png" style="width:120px;height:120px;"/></a>
+                <a href="candlestick/"><img src="./candlestick1.png" style="width:120px;height:120px;"/></a>
+                <a href="choropleth/"><img src="./choropleth1.png" style="width:120px;height:120px;"/></a>
+                <a href="chord/"><img src="./chord1.png" style="width:120px;height:120px;"/></a>
+                <a href="cluster/"><img src="./cluster1.png" style="width:120px;height:120px;"/></a>
+                <a href="donut/"><img src="./donut1.png" style="width:120px;height:120px;"/></a>
+                <a href="forcedirected/"><img src="./force1.png" style="width:120px;height:120px;"/></a>
+                <a href="line/"><img src="./line1.png" style="width:120px;height:120px;"/></a>
+                <a href="maps/"><img src="./map1.png" style="width:120px;height:120px;"/></a>
+                <a href="packedcircle/"><img src="./packed1.png" style="width:120px;height:120px;"/></a>
+                <a href="partition/"><img src="./partition1.png" style="width:120px;height:120px;"/></a>
+                <a href="pie/"><img src="./pie1.png" style="width:120px;height:120px;"/></a>
+                <a href="scatterplot/"><img src="./scatter1.png" style="width:120px;height:120px;"/></a>
+                <a href="stackedarea/"><img src="./stackedarea1.png" style="width:120px;height:120px;"/></a>
+                <a href="stackedbar/"><img src="./stackedbar1.png" style="width:120px;height:120px;"/></a>
+                <a href="tree/"><img src="./tree1.png" style="width:120px;height:120px;"/></a>
+                <a href="treemap/"><img src="./treemap1.png" style="width:120px;height:120px;"/></a>
+
+                <div id="about">
+                  <h1>About</h1>
+                  <h2>Overview</h2>
+                  <p>This is a simple website demonstrating different basic visualizations and discussing their advantages and best use cases. Each
+                    type of visualization is analyzed. The type of data it is useful for, the marks and channels it uses, and some important considerations
+                    when using the visualization are all discussed. Each visualization also has some links to further resources as well as links to related
+                    visualizations, if applicable. By using this site, one should be able to further understand the type of visualization presented, as well as 
+                    be able to identify its pros and cons, allowing them to be able to identify which type of visualization is best suited for their data.
+                  </p>
+                  <h2>How to Use</h2>
+                  <p>To use this site, simply click on the icons above to view the visualization represented. This will bring the user to a page giving an example 
+                    of the visualization as well as a discussion of its advantages, disadvantages, example use case, as well as possibly tips or considerations. To 
+                    return to the main page, simply click the "Home" link at the top of the page. It should be noted that all data used to create the sample visualizations 
+                    is fake.
+                  </p>
+                  <h2>Development Process</h2>
+                  <p>Each visualization is made using D3. To create this website, I first focused on the base visualization, taking code provided in class and through the 
+                    D3 textbook. I then created fake data to use for each of the visualizations. After I had data as well as the base part of the visualizations, I focused 
+                    on styling the visualization as well as adding labels for axis, titles, and legends. The legends were made using Susie Lu's d3.svg.legend package. While creating 
+                    the visualizations, I also worked on analyzing them. Finally, I worked on creating the icons seen on the main page, as well as fixing the CSS styling of the website 
+                    as a whole. 
+                  </p>
+                  <p>When writing the descriptions for the visualizations, I referenced several sites. In particular, it was interesting learning about the origin of the candlestick 
+                    chart. 
+                  </p>
+                  
+              <div >
+                <h1>References</h1>
+                <p>Datasets are all random fake data I generated myself. </p>
+                <p>The base of these visualizations come from the code provided in class by the professor Steven Yi and through the textbook <em>Interactive Data Visualization for the 
+                  Web</em>, 2nd edition. Scott Murray. O’Reilly, August 26, 2017.  </p>
+                <p>Lengends are created using Susie Lu's d3.svg.legend package.</p>
+                <p>W3 Schools was used in reference for CSS styling.</p>
+                <p>Color Brewer 2.0 was used to select some color schemes.</p>
+                <p>Further references for individual visualizations can be found on their respective pages.</p>
+            </div>
+              </div>
         </div>
 
-        <div id="about">
-            <h1>About</h1>
-            <p>This is a small website demonstrating different basic visualizations and discussing their advantages and best usecases. </p>
-        </div>
-        <div id="references">
-            <h1>References</h1>
-            <p>The base of these visualizations come from the code provided in class and through the text book. Datasets are all random fake data 
-                I generated myself. 
-            </p>
-            <p>Lengends are created using Susie Lu's package.</p>
-        </div>
+      
 
     </div>
 </div>

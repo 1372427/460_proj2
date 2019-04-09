@@ -40,7 +40,6 @@ let dataset = {
   function makeGraph() {
   
     let root = d3.hierarchy(dataset);
-    console.log(root)
   
     let w = 500, h = 500;
   
@@ -54,7 +53,6 @@ let dataset = {
 
 
     packLayout(root);
-    console.log(root)
   
   
     // Our data now has a lot of information as well as utility functions for grabbing
@@ -84,6 +82,25 @@ let dataset = {
        .attr('y', d => d.y )
        .text(d => d.children===undefined? d.data.name: "");
        
+       
+    // LEGEND - built using Susie Lu's d3.svg.legend package
+    let legendScale = d3.scaleOrdinal()
+                        .domain(["COLA", "GCCIS", 'COIS'])
+                        .range(["#FFAB6C", "#FFC66C", "#B37A6C"]);
+  
+    svg.append("g")
+      .attr("class", "legendOrdinal")
+      .attr("transform", "translate(420,20)");
+  
+    // see https://github.com/d3/d3-shape#symbols for information about d3 symbol shapes
+    var legendOrdinal = d3.legendColor()
+      .shape("path", d3.symbol().type(d3.symbolSquare).size(60)())
+      .shapePadding(10)
+      .scale(legendScale);
+  
+    svg.select(".legendOrdinal")
+      .call(legendOrdinal);
+            
   
 
        svg.append('text')

@@ -5,16 +5,17 @@
     <meta charset="utf-8">
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
     <link rel="stylesheet" href="../main.css">
   </head>
 
-  <body><div id="background"></div>
+  <body> 
       <div>
-          
-    <div id="flex-container"> 
         <navbar>
             <a href="../index.html">Home</a>
         </navbar>
+          
+        <div id="vis" class="background">
 
         <div id="svg"></div>
         <div id="description">
@@ -31,9 +32,13 @@
                 colored based on whether the closing price was higher or 
                 lower than the opening price. This helps people see at a glance 
                 the main information, as well as give them the opportunity to look 
-                at the details. While this is a highly effective graph for showing
+                at the details. Here, the green color represents the closing 
+                price was higher than the opening price, while red represents the opposite.
+                There is no legend here as this is a fairly standard coloring scheme. 
+                While this visual is highly effective for showing
                  information such as you would get from market values, it does 
-                 not expand well to other types of information. </p>
+                 not expand well to other types of information. 
+                </p>
             <h2>Marks and Channels</h2>
             <h3>Marks</h3>
             <p>Marks include two sets of lines. The first line shows the high and low values. The 
@@ -45,15 +50,19 @@
             <p>Channels include the position of the lines on a common scale. There is the vertical point 
                 for the line based on the opening value, the vertical point for the line based on the low
                 value, the vertical point for the ending of the line based on closing value, and the vertical
-                point for the line based on the high value. Another channel may be the color of the lines. Often, 
+                point for the line based on the high value. Compared to the bar graph, where the length of the line 
+                is the chalnnel, here the points are the channel. This is because while the lines in bar graphs all start 
+                at 0 on the y-axis, in this visualization, the starting point as well as the ending point can change. 
+                Another channel may be the color of the lines. Often, 
                 this channel is used to identify whether the item's opening value was higher or lower than the closing
                 value.  
             </p>
-        </div>
-        <div id="resources">
-            <h3>Resources</h3>
-            <p>https://www.investopedia.com/terms/c/candlestick.asp</p>
-        </div>
+            <h2>Related Charts</h2>
+            <a href="../bar/">Bar Chart</a>
+            <h1 id="resources">Resources</h1>
+            <p><a href="https://www.investopedia.com/terms/c/candlestick.asp">https://www.investopedia.com/terms/c/candlestick.asp</a></p>
+            <p>Please see "Home" page for more resources</p>
+      </div>
 
     </div>
 </div>

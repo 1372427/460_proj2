@@ -1,6 +1,9 @@
 
 let dataset = [
   {
+    cities: 1,
+    date: new Date(2017, 0)
+  },{
     cities: 5,
     date: new Date(2017, 01)
   },{
@@ -34,33 +37,6 @@ let dataset = [
   {
     cities: 2,
     date: new Date(2017, 11)
-  },{
-    cities: 1,
-    date: new Date(2017, 12)
-  },{
-    cities: 3,
-    date: new Date(2018, 1)
-  },{
-    cities: 6,
-    date: new Date(2018, 2)
-  },{
-    cities: 3,
-    date: new Date(2018, 3)
-  },{
-    cities: 4,
-    date: new Date(2018, 4)
-  },{
-    cities: 5,
-    date: new Date(2018, 5)
-  },{
-    cities: 4,
-    date: new Date(2018, 6)
-  },{
-    cities: 2,
-    date: new Date(2018, 7)
-  },{
-    cities: 2,
-    date: new Date(2018, 8)
   },
 ]
 

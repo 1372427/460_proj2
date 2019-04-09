@@ -71,7 +71,7 @@ function createAreaChart() {
     // draw the line using a path
     svg.append('path')
        .datum(dataset)
-       .attr("fill", "red")
+       .attr("fill", "#b55b68")
        .attr('class', 'area')
        .attr('d', area);
 

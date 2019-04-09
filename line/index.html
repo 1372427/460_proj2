@@ -5,16 +5,17 @@
     <meta charset="utf-8">
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
     <link rel="stylesheet" href="../main.css">
   </head>
 
-  <body><div id="background"></div>
+  <body> 
       <div>
-          
-    <div id="flex-container"> 
         <navbar>
             <a href="../index.html">Home</a>
         </navbar>
+          
+        <div id="vis" class="background">
 
         <div id="svg"></div>
         <div id="description">
@@ -22,20 +23,24 @@
             <p>The line graph is very useful for displaying trends. The line graph can be used to plot
               two different numeric variables, or it can be used to plot one numeric variable with respect 
               to time. This graph is useful when a relation is already known to exist, such as when displaying
-              on variable with respect to time. If there are several values for a particular point on the x-axis, 
-              the line graph is most likely not the optimal representation of the data. 
+              one variable with respect to time. If there are several values for a particular point on the x-axis, 
+              the line graph is most likely not the optimal representation of the data. In that case, the scatterplot may be useful 
+              if trying to discover whether a trend exists or not. 
             <h2>Marks and Channels</h2>
             <h3>Marks</h3>
             <p>Marks include the line. 
             </p>
             <h3>Channels</h3>
-            <p>Channels include the vertical and horizontal position of points on the line. 
+            <p>Channels include the vertical and horizontal position of points on the line on a common scale. 
+              If multiple lines are being shown on one visualization, color may also be used to categorize the lines.
             </p>
-        </div>
-        <div id="resources">RESOURCES</div>
-
-
-    </div>
+            <h2>Related Charts</h2>
+            <a href="../scatterplot/">Scatterplot</a></br>
+            <a href="../bar/">Bar Graph</a></br>
+            <a href="../area/">Area Chart</a>
+            <h1 id="resources">Resources</h1>
+            <p>Please see "Home" page for more resources</p>
+      </div>
 </div>
     <!-- add your HTML here -->
     <script src='./line.js'></script>

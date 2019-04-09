@@ -5,22 +5,23 @@
     <meta charset="utf-8">
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
     <link rel="stylesheet" href="../main.css">
     <link rel="stylesheet" href="chart.css">
   </head>
 
-  <body><div id="background"></div>
+  <body> 
       <div>
-          
-    <div id="flex-container"> 
         <navbar>
             <a href="../index.html">Home</a>
         </navbar>
+          
+        <div id="vis" class="background">
 
         <div id="svg"></div>
         <div id="description">
             <h1>About this Graph</h1>
-            <p> Force directed graphs are another way to display network data, 
+            <p> Force directed graphs are a way to display network data, 
                 or relationships between items. Each item, or node, is represented
                  as a circle or other basic shape. Relationships between 
                  items are shown as lines, or links, connecting these nodes.
@@ -31,19 +32,20 @@
                   kind of graph is helpful for identifying clusters of connected nodes.
                    A common example is to graph the friends in person or online of one individual. 
                    This would show if there are any groups of friends who know each other, 
-                   such as people from work vs. people from a hometown or family. The kind 
-                   of data this graph is useful for is limited, but if you would like to
+                   such as people from work compared to people from a hometown or family. The kind 
+                   of data this graph is useful for is limited, but if the goal is to
                     explore the relationships of items, this would be a helpful graph. </p>
             <h2>Marks and Channels</h2>
             <h3>Marks</h3>
-            <p>Marks include basic shapes (usually circles), or points, for the nodes and lines which 
+            <p>Marks include points (basic shapes, usually circles) for the nodes and lines as links which 
           connect the nodes. </p>
             <h3>Channels</h3>
             <p>Channels include the spatial placement of the nodes, as well as color if being  used to categorize
           the nodes.</p>
-        </div>
-        <div id="resources">RESOURCES</div>
-
+          <h2>Related Charts</h2>
+          <a href="../cluster/">Cluster Graph</a>
+          <h1 id="resources">Resources</h1>
+          <p>Please see "Home" page for more resources</p>
     </div>
 </div>
     <!-- add your HTML here -->

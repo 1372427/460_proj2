@@ -3,21 +3,21 @@
  */
 
 let dataset = {
-    "name": "A",
+    "name": "E",
     "children": [
       { "name": "B", 
         "children": [ 
-          { "name": "C"
-          }, { "name": "D", 
+          { "name": "A"
+          }, { "name": "C", 
           "children": [ 
-            { "name": "E"
+            { "name": "D"
             }
         
         ]}
       
       ]},
-      { "name": "F","children": [ 
-        { "name": "G"
+      { "name": "G","children": [ 
+        { "name": "F"
         }, { "name": "H"}]
      }
     ]

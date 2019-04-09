@@ -121,7 +121,7 @@ function makeGraph() {
   
     svg.append("g")
       .attr("class", "legendOrdinal")
-      .attr("transform", "translate(80,20)");
+      .attr("transform", "translate(40,60)");
   
     // see https://github.com/d3/d3-shape#symbols for information about d3 symbol shapes
     var legendOrdinal = d3.legendColor()
@@ -134,8 +134,8 @@ function makeGraph() {
 
      svg.append('text')
      .classed('title', true)
-     .attr('x', 300)
-     .attr('y', 40)
+     .attr('x', 250)
+     .attr('y', 20)
      .attr('text-anchor', 'middle')
      .text('Countries Sharing Borders')
 

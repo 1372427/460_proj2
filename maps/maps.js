@@ -58,6 +58,8 @@ let stateValues = {
 
   let s;
   
+  let colors = ["#edf8fb", "#b3cde3", "#8c96c6", "#8856a7", "#810f7c"];
+
   /* VISUALIZATION CODE */
   
   function createVisualization(dataset, stateValues, cityValues) {
@@ -80,7 +82,7 @@ let stateValues = {
                                
     // 4. Create a color scale to use for the fill
     let color = d3.scaleQuantize()
-              .range(["rgb(237,248,233)","rgb(186,228,179)","rgb(116,196,118)","rgb(49,163,84)","rgb(0,109,44)"]);
+              .range(colors);
   
     //Set input domain for color scale
     let sValues = Array.from(stateValues.values()); // grab values from Map object and put into an array
@@ -105,8 +107,8 @@ let stateValues = {
             //If value exists…
             return color(value);
           } else {
-            //If value is undefined…
-            return "#ccc";
+            //If value is 0
+            return colors[0];
           }
         })
         .style('stroke', 'black');
@@ -117,7 +119,7 @@ let stateValues = {
         .enter()
         .append("circle")
         .style('fill', 'red')
-        .style('stroke', 'purple')
+        .style('stroke', 'black')
         .style('opacity', '0.75')
         .attr('cx', d => projection([d.lon, d.lat])[0])
         .attr('cy', d => projection([d.lon, d.lat])[1])
@@ -192,16 +194,16 @@ let stateValues = {
     // LEGEND - built using Susie Lu's d3.svg.legend package
     let legendScale = d3.scaleOrdinal()
                         .domain(['0-20', '20-40', '40-60', "60-80", "80-100"])
-                        .range(["rgb(237,248,233)","rgb(186,228,179)","rgb(116,196,118)","rgb(49,163,84)","rgb(0,109,44)"]);
+                        .range(colors);
   
     svg.append("g")
       .attr("class", "legendOrdinal")
-      .attr("transform", "translate(430, 350)")
+      .attr("transform", "translate(420, 350)")
       .append('rect')
       .attr('width', '100')
       .attr('height', '150')
       .attr("transform", "translate(-20, -20)")
-        .style('fill', '#b5b26c');
+        .style('fill', '#997349');
   
     // see https://github.com/d3/d3-shape#symbols for information about d3 symbol shapes
     var legendOrdinal = d3.legendColor()
@@ -211,6 +213,20 @@ let stateValues = {
   
     svg.select(".legendOrdinal")
       .call(legendOrdinal);
+
+    svg.append('text')
+      .classed('title', true)
+      .attr('x', w/2)
+      .attr('y', 20)
+      .attr('text-anchor', 'middle')
+      .text('Cities Visited');
+
+    
+    svg.append('text')
+      .attr('x', 440)
+      .attr('y', 320)
+      .attr('text-anchor', 'middle')
+      .text('% Want to Visit')
   }
   
   // load multiple json files and wait for all results using Promise.all()

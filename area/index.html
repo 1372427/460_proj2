@@ -5,16 +5,17 @@
     <meta charset="utf-8">
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
     <link rel="stylesheet" href="../main.css">
   </head>
 
-  <body><div id="background"></div>
+  <body> 
       <div>
-          
-    <div id="flex-container"> 
         <navbar>
             <a href="../index.html">Home</a>
         </navbar>
+          
+        <div id="vis" class="background">
 
         <div id="svg"></div>
         <div id="description">
@@ -30,12 +31,17 @@
             <h3>Marks</h3>
             <p>Marks include area. </p>
             <h3>Channels</h3>
-            <p>Channels include the size of the area. Color can also be used to show a threshold value or 
+            <p>Channels include the size of the area as determined by the vertical position of the individual points.
+               Color can also be used to show a threshold value or 
               some other information which may separate the same area. This would lead it to be closer to a stacked
               area chart.
             </p>
+              <h2>Related Charts</h2>
+              <a href="../line/">Line Chart</a></br>
+              <a href="../stackedarea/">Stacked Area Chart</a>
+              <h1 id="resources">Resources</h1>
+              <p>Please see "Home" page for more resources</p>
         </div>
-        <div id="resources">RESOURCES</div>
 
     </div>
 </div>

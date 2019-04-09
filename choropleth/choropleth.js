@@ -84,7 +84,7 @@ let stateValues = {
   
     // 2. Define a map projection
       let projection = d3.geoAlbersUsa()
-                        .translate([w/2, 5*h/16]) 
+                        .translate([240, 200]) 
                         .scale([600]);
   
     // 3. Define a path generator using the projection
@@ -140,7 +140,12 @@ let stateValues = {
   
     svg.append("g")
       .attr("class", "legendOrdinal")
-      .attr("transform", "translate(430, 200)");
+      .attr("transform", "translate(430, 260)")
+      .append('rect')
+      .attr('width', '100')
+      .attr('height', '160')
+      .attr("transform", "translate(-20, -20)")
+        .style('fill', '#997349');;
   
     // see https://github.com/d3/d3-shape#symbols for information about d3 symbol shapes
     var legendOrdinal = d3.legendColor()

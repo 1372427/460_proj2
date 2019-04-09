@@ -26,7 +26,7 @@ function makeGraph() {
       .attr('height', h);
 
     svg.append('g')
-       .attr("transform", `translate(240, 270)`)
+       .attr("transform", `translate(220, 270)`)
         .selectAll('path')
         .data(chords)
         .enter()
@@ -39,7 +39,7 @@ function makeGraph() {
         //
     svg.datum(chords)
         .append("g")
-        .attr("transform", `translate(240, 270)`)
+        .attr("transform", `translate(220, 270)`)
         .selectAll("g")
         .data(function(d) { return d.groups; })
         .enter()
@@ -59,7 +59,7 @@ function makeGraph() {
   
     svg.append("g")
       .attr("class", "legendOrdinal")
-      .attr("transform", "translate(430, 10)");
+      .attr("transform", "translate(420, 10)");
   
     // see https://github.com/d3/d3-shape#symbols for information about d3 symbol shapes
     var legendOrdinal = d3.legendColor()
@@ -74,7 +74,7 @@ function makeGraph() {
 
      svg.append('text')
      .classed('title', true)
-     .attr('x', w/2)
+     .attr('x', 220)
      .attr('y', 20)
      .attr('text-anchor', 'middle')
      .text('2018 Emigration')

@@ -20,16 +20,18 @@ function createPieChart() {
   
     // settings for our pie chart 
     let w = 500;
-    let h = 300;
+    let h = 500;
     let innerRadius = 0;       
-    let outerRadius = h/2;
+    let outerRadius = 150;
   
     // create our SVG element
     let svg = d3
       .select("#svg")
       .append("svg")
       .attr("width", w)
-      .attr("height", h);
+      .attr("height", h)
+      .append('g')
+      .attr('transform', 'translate(-50,0)');
   
     // create D3 pie layout that converts 
     // dataset into one appropriate for pie charts 
@@ -71,6 +73,11 @@ function createPieChart() {
       .attr('text-anchor', 'middle')
       .text(d => d.value);
   
+      svg.append('text')
+      .attr('transform', `translate(280,20)`)
+      .attr('text-anchor', 'middle')
+      .classed('title', true)
+      .text('RIT 2018 Demography');
     // LEGEND - built using Susie Lu's d3.svg.legend package
     let pieData = pie(dataset);
     let legendScale = d3.scaleOrdinal()
@@ -79,7 +86,7 @@ function createPieChart() {
   
     svg.append("g")
       .attr("class", "legendOrdinal")
-      .attr("transform", "translate(320,20)");
+      .attr("transform", "translate(400,60)");
   
     // see https://github.com/d3/d3-shape#symbols for information about d3 symbol shapes
     var legendOrdinal = d3.legendColor()

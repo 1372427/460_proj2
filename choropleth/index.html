@@ -5,16 +5,17 @@
     <meta charset="utf-8">
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
     <link rel="stylesheet" href="../main.css">
   </head>
 
-  <body><div id="background"></div>
+  <body> 
       <div>
-          
-    <div id="flex-container"> 
         <navbar>
             <a href="../index.html">Home</a>
         </navbar>
+          
+        <div id="vis" class="background">
 
         <div id="svg"></div>
         <div id="description">
@@ -23,7 +24,7 @@
                 Often information is based on the color a particular area is filled in with. 
                 This kind of graph is helpful when trying to determine trends based on location, 
                 or see hotspots grouped around a particular area. These kinds of graphs are 
-                often used when displaying information such as political stance. While this 
+                often used when displaying information such as political stance.</p><p> While this 
                 type of graph can be helpful to see the overall trend in locations such as states, 
                 it may obscure other information. One must be careful about things such as skewed 
                 representation if the target of the information is population rather than landmass. 
@@ -35,11 +36,14 @@
           area itself is irrelevant and what is important is the area being contained. Because of this, the 
           mark could also be a grouping mark of containment.</p>
             <h3>Channels</h3>
-            <p>Channels include the color which each area is colored.</p>
-        </div>
-        <div id="resources">RESOURCES</div>
+            <p>Channels include the color which each area is colored. As well as potentially the area, 
+              depending on the visualization.</p>
 
-    </div>
+        <h2>Related Charts</h2>
+        <a href="../map/">Maps</a>
+        <h1 id="resources">Resources</h1>
+        <p>Please see "Home" page for more resources</p>
+  </div>
 </div>
     <!-- add your HTML here -->
     <script src='./choropleth.js'></script>
